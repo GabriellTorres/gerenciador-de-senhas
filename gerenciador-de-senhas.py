@@ -10,17 +10,29 @@ def encrypt_credentials(text = '', key = '', iv = ''):
     cipher = AES.new(key, AES.MODE_CBC, iv)
     padding = pad(text_bytes, 16)
     cipherText = cipher.encrypt(padding)
-    print(f'Senha cifrada - {cipherText}')
 
-def decrypt_credentials(cipherText = '', key = ''):
-    pass
+    return cipherText
+
+def decrypt_credentials(cipherText = '', key = '', iv = ''):
+
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    decrypt_padding = cipher.decrypt(cipherText)
+
+    text_bytes = unpad(decrypt_padding, 16)
+
+    text = text_bytes.decode('utf-8')
+
+    print(f'texto descriptografado - {text}')
+
 
 def initial():
     pass
 
 
 
-# iv = os.urandom(16)
-# key = os.urandom(16)
+iv = os.urandom(16)
+key = os.urandom(16)
 
-# encrypt_credentials('Ac#!e42R', key, iv)
+
+text_crypt = encrypt_credentials('Ac#!e42R', key, iv)
+decrypt_credentials(text_crypt, key, iv)
