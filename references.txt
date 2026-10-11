@@ -1,2 +1,3 @@
 https://www.linkedin.com/pulse/comprehensive-guide-aes-encryption-inpython-jithendrasai-kilaru-1acuc/
 https://www.linkedin.com/pulse/block-cipher-modes-operation-mohan-srinivas/
+https://www.thesslstore.com/blog/block-cipher-vs-stream-cipher/
